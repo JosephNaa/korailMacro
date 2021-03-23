@@ -1,11 +1,14 @@
-const express = require('express')
-const nunjucks = require('nunjucks')
-const logger = require('morgan')
-const bodyParser = require('body-parser')
+import express from 'express'
+import nunjucks from 'nunjucks'
+import logger from 'morgan'
+import bodyParser from 'body-parser'
 
 const db = require('./models')
 
 class App {
+    public app : express.Application;
+
+
     constructor() {
         this.app = express()
 
@@ -35,4 +38,5 @@ class App {
     }
 }
 
-module.exports = new App().app
+
+export default new App().app
